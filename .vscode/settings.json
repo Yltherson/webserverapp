@@ -1,0 +1,7 @@
+{
+    "json.schemas": [
+
+    ],
+    "php.validate.executablePath": "",
+    "php.debug.executablePath": ""
+}
