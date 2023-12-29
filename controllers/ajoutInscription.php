@@ -20,6 +20,7 @@
             $alea = rand(10, 100000);
             $code = 'C' . $alea;
 
+            // reccuperer la valeur des inputs
             $codeInscription = $code;
             $nom = $_POST['nom'];
             $prenom = $_POST['prenom'];
@@ -38,6 +39,7 @@
             $stmt->bindParam(':fraisInscription', $fraisInscription);
             $stmt->bindParam(':dateInscription', $dateInscription);
 
+            // executer la requete
             $stmt->execute();
 
         } catch (PDOException $e) {

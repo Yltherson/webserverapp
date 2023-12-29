@@ -40,13 +40,19 @@
                 <input type="text" id="nom" name="nom" placeholder="Your last name.." required>
 
                 <label for="sex">Sexe</label>
-                <input type="text" id="sex" name="sexe" placeholder="Your gender.." required>
+                <select name="sexe" id="sex">
+                    <option value="masculin">Masculin</option>
+                    <option value="feminin">Feminin</option>
+                </select><br><br>
 
                 <label for="birth">Date de naissance</label>
                 <input type="date" id="birth" name="dateNaissance" placeholder="Your birthday.." required><br>
                 
                 <label for="class">Classe </label>
-                <input type="text" id="class" name="classe" placeholder="Your class.." required>
+                <select name="sexe" id="sex">
+                    <option value="masculin">Masculin</option>
+                    <option value="feminin">Feminin</option>
+                </select><br><br>
 
                 <label for="sub">Frais inscription</label>
                 <input type="number" id="sub" name="fraisInscription" placeholder="Your fee.." required>
@@ -62,12 +68,49 @@
     <section class="afficherInsc">
         <div class="block">
             <h3>Liste inscription</h3>
+            <?php
+                $servername = "localhost";
+                $username = "root";
+                $password = "";
+                $dbname = "urh";
+
+                // Create connection
+                $conn = new mysqli($servername, $username, $password, $dbname);
+                // Check connection
+                if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+                }
+
+                $sql = "SELECT * FROM inscription";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                echo "<table><tr><th>CODE</th><th>PRENOM</th><th>NOM</th><th>SEXE</th><th>DATE DE NAISSANCE</th><th>CLASSE</th><th>FRAIS INSCRIPTION</th><th>DATE INSCRIPTION</th></tr>";
+                // output data of each row
+                while($row = $result->fetch_assoc()) {
+                    echo "<tr>
+                    <td>".$row["codeInscription"]."</td>
+                    <td>".$row["prenom"]."</td>
+                    <td>".$row["nom"]."</td>
+                    <td>".$row["sexe"]."</td>
+                    <td>".$row["dateNaissance"]."</td>
+                    <td>".$row["classe"]."</td>
+                    <td>".$row["fraisInscription"]."</td>
+                    <td>".$row["dateInscription"]."</td>
+                    </tr>";
+                }
+                echo "</table>";
+                } else {
+                echo "0 results";
+                }
+                $conn->close();
+            ?>
         </div>
     </div></section>
 
     <!-- block paiement -->
     <section class="paiement inactive">
-
+        
     </section>
 </body>
 </html>
