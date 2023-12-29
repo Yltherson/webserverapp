@@ -58,10 +58,10 @@
                 </select><br><br>
 
                 <label for="sub">Frais inscription</label>
-                <input type="number" id="sub" name="fraisInscription" placeholder="Your fee.." required>
+                <input type="number" id="sub" name="fraisInscription" placeholder="Your fee.." required><br><br>
 
-                <label for="birth">Date d'inscription</label>
-                <input type="date" id="birth" name="dateInscription" placeholder="signup date.." required><br>
+                <label for="date">Date d'inscription</label>
+                <input type="date" id="date" name="dateInscription" placeholder="signup date.." required><br>
             
                 <input type="submit" name="submit" value="Ajouter">
             </form>
@@ -101,6 +101,11 @@
                     <td>".$row["classe"]."</td>
                     <td>".$row["fraisInscription"]."</td>
                     <td>".$row["dateInscription"]."</td>
+                    <td>"
+                        ."<form method='POST' action='controllers\supprimerInscription.php'><"
+                        .'style="display: none"'."input type='text' name='codeInscription' value='"
+                        .$row["codeInscription"]
+                        ."' ><input type='submit' value='supprimer'></form></td>
                     </tr>";
                 }
                 echo "</table>";
@@ -116,5 +121,7 @@
     <section class="paiement inactive">
         
     </section>
+
+    "style=\"display: none;\""
 </body>
 </html>

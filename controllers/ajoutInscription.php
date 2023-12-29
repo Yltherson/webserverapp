@@ -1,7 +1,7 @@
 <?php
     // require_once 'C:\xampp\htdocs\webserverapp\models\Inscription.php';
 
-    if ($_SERVER['METHOD']) {
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $servername = "localhost";
         $username = "root";
@@ -49,7 +49,6 @@
         $conn = null;
     } else {
         echo "Formulaire non soumis";
-        header("Location: connexion.php");
         exit;
     }
 
