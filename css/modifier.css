@@ -1,0 +1,29 @@
+.lign{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.col-lign{
+    width: 50%;
+    margin: 10px;
+}
+
+.img{
+    width: 25%;
+    background-color: rgb(245, 64, 64);
+}
+
+.info{
+    width: 75%;
+}
+
+.form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
