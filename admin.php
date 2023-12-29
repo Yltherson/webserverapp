@@ -89,23 +89,33 @@
                 $result = $conn->query($sql);
 
                 if ($result->num_rows > 0) {
-                echo "<table><tr><th>CODE</th><th>PRENOM</th><th>NOM</th><th>SEXE</th><th>DATE DE NAISSANCE</th><th>CLASSE</th><th>FRAIS INSCRIPTION</th><th>DATE INSCRIPTION</th></tr>";
+                echo "<table>
+                <tr>
+                    <th>CODE</th><th>PRENOM</th><th>NOM</th><th>SEXE</th><th>DATE DE NAISSANCE</th><th>CLASSE</th><th>FRAIS INSCRIPTION</th><th>DATE INSCRIPTION</th>
+                    <th>
+                        <from method='post' action='#'>
+                            <input type ='search' name='search'>
+                            <input type='submit' name='btnSearch' value='search'>
+                        </form>
+                    </th>
+                </tr>";
                 // output data of each row
                 while($row = $result->fetch_assoc()) {
                     echo "<tr>
-                    <td>".$row["codeInscription"]."</td>
-                    <td>".$row["prenom"]."</td>
-                    <td>".$row["nom"]."</td>
-                    <td>".$row["sexe"]."</td>
-                    <td>".$row["dateNaissance"]."</td>
-                    <td>".$row["classe"]."</td>
-                    <td>".$row["fraisInscription"]."</td>
-                    <td>".$row["dateInscription"]."</td>
-                    <td>"
-                        ."<form method='POST' action='controllers\supprimerInscription.php'><"
-                        .'style="display: none"'."input type='text' name='codeInscription' value='"
-                        .$row["codeInscription"]
-                        ."' ><input type='submit' value='supprimer'></form></td>
+                        <td>".$row["codeInscription"]."</td>
+                        <td>".$row["prenom"]."</td>
+                        <td>".$row["nom"]."</td>
+                        <td>".$row["sexe"]."</td>
+                        <td>".$row["dateNaissance"]."</td>
+                        <td>".$row["classe"]."</td>
+                        <td>".$row["fraisInscription"]."</td>
+                        <td>".$row["dateInscription"]."</td>
+                        <td>"
+                            ."<form method='POST' action='controllers\supprimerInscription.php'>"
+                            ."<input type='text' name='codeInscription' value='"
+                            .$row["codeInscription"]
+                            ."' ><input type='submit' value='supprimer'></form>
+                        </td>
                     </tr>";
                 }
                 echo "</table>";
