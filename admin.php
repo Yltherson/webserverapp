@@ -92,7 +92,7 @@
                 if ($result->num_rows > 0) {
                 echo "<table>
                 <tr>
-                    <th>CODE</th><th>PRENOM</th><th>NOM</th><th>SEXE</th><th>DATE DE NAISSANCE</th><th>CLASSE</th><th>FRAIS INSCRIPTION</th><th>DATE INSCRIPTION</th>
+                    <th>CODE</th><th>PRENOM</th><th>NOM</th><th>SEXE</th><th>DATE DE NAISSANCE</th><th>CLASSE</th><th>FRAIS INSCRIPTION</th><th>DATE INSCRIPTION</th><th></th>
                     <th>
                         <from method='post' action='#'>
                             <input type ='text' name='search' placeholder='code ins...'>
