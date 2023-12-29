@@ -1,7 +1,7 @@
 <?php
     // require_once 'C:\xampp\htdocs\webserverapp\models\Inscription.php';
 
-    if ($_POST['submit']) {
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $servername = "localhost";
         $username = "root";
@@ -40,11 +40,16 @@
             $stmt->bindParam(':dateInscription', $dateInscription);
 
             // executer la requete
+            $stmt->execute();
+            header("Location: ../admin.php");
+            exit();
         } catch (PDOException $e) {
             echo "Erreur : " . $e->getMessage();
         }
         $conn = null;
     } else {
         echo "Formulaire non soumis";
+        exit;
     }
+
 ?>

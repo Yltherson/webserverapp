@@ -1,6 +1,15 @@
 table {
     border-collapse: collapse;
+<<<<<<< HEAD
     width: 600px;
+=======
+    width: 800px;
+  }
+
+  th {
+    background-color: #040614;
+    color: white;
+>>>>>>> e08a2789d6bca00197d182f1ca12fc33b1b474d2
   }
   
   th, td {
