@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css\style1.css">
+    <link rel="stylesheet" href="css\table.css">
 </head>
 <body>
     <div class="menu">
@@ -49,9 +50,11 @@
                 <input type="date" id="birth" name="dateNaissance" placeholder="Your birthday.." required><br>
                 
                 <label for="class">Classe </label>
-                <select name="sexe" id="sex">
-                    <option value="masculin">Masculin</option>
-                    <option value="feminin">Feminin</option>
+                <select name="classe" id="class">
+                    <option value="L1">L1</option>
+                    <option value="L2">L2</option>
+                    <option value="L3">L3</option>
+                    <option value="L4">L4</option>
                 </select><br><br>
 
                 <label for="sub">Frais inscription</label>
@@ -66,7 +69,8 @@
     </section><br>
 
     <section class="afficherInsc">
-        <div class="block">
+        
+        <div class="tableI">
             <h3>Liste inscription</h3>
             <?php
                 $servername = "localhost";
@@ -106,7 +110,7 @@
                 $conn->close();
             ?>
         </div>
-    </div></section>
+    </section>
 
     <!-- block paiement -->
     <section class="paiement inactive">
