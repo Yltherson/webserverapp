@@ -15,12 +15,21 @@
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             // Préparer la requête SQL et lier les paramètres
-            $stmt = $conn->prepare("DELETE FROM inscription where codeInscription=:codeInscription");
+            $stmt = $conn->prepare("INSERT INTO paiement (idPaiement, codeInscription, montant, dateP) VALUES (:idPaiement, :codeInscription, :montant, :dateP)");
 
-            // reccuperer la valeur de input
+            $alea = rand(10, 100000);
+            $id = 'P' . $alea;
+
+            // reccuperer la valeur des inputs
+            $idPaiement = $id;
             $codeInscription = $_POST['codeInscription'];
+            $montant = $_POST['montant'];
+            $dateP = $_POST['dateP'];
 
+            $stmt->bindParam(':idPaiement', $idPaiement);
             $stmt->bindParam(':codeInscription', $codeInscription);
+            $stmt->bindParam(':montant', $montant);
+            $stmt->bindParam(':dateP', $dateP);
 
             // executer la requete
             $stmt->execute();

@@ -8,6 +8,20 @@
 </head>
 <body>
     <div>
+        <div class="menu">
+            <div id="logo"><h3>LOGO</h3></div>
+            <div class="navigation">
+                <nav>
+                    <ul>
+                        <li><a href="admin.php">admin</a></li>
+                        <li><a href="modifier.php">modifier</a></li>
+                        <li><a href="paiement.php">paiement</a></li>
+                        <li>ABOUT</li>
+                        <li>CONTACT</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
         <form action="controllers\modifierInscription.php" method='POST'>
             <div class="form">
                 <div class="img">
@@ -54,7 +68,7 @@
 
                     <div class="lign">
                         <div class="col-lign">
-                        <label for="sex">Sexe</label><br>
+                            <label for="sex">Sexe</label><br>
                             <select name="sexe" id="sex" style="width:100%; height:25px">
                                 <option value="masculin">Masculin</option>
                                 <option value="feminin">Feminin</option>

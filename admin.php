@@ -13,9 +13,9 @@
         <div class="navigation">
             <nav>
                 <ul>
-                    <li>HOME</li>
-                    <li>INSCRIPTION</li>
-                    <li>PAIEMENT</li>
+                    <li><a href="admin.php">admin</a></li>
+                    <li><a href="modifier.php">modifier</a></li>
+                    <li><a href="paiement.php">paiement</a></li>
                     <li>ABOUT</li>
                     <li>CONTACT</li>
                 </ul>
@@ -94,7 +94,7 @@
                     <th>CODE</th><th>PRENOM</th><th>NOM</th><th>SEXE</th><th>DATE DE NAISSANCE</th><th>CLASSE</th><th>FRAIS INSCRIPTION</th><th>DATE INSCRIPTION</th>
                     <th>
                         <from method='post' action='#'>
-                            <input type ='search' name='search'>
+                            <input type ='text' name='search' placeholder='code ins...'>
                             <input type='submit' name='btnSearch' value='search'>
                         </form>
                     </th>
@@ -132,6 +132,5 @@
         
     </section>
 
-    "style=\"display: none;\""
 </body>
 </html>
