@@ -112,7 +112,7 @@
                         <td>".$row["dateInscription"]."</td>
                         <td>"
                             ."<form method='POST' action='controllers\supprimerInscription.php'>"
-                            ."<input type='text'".'style="visibility: hidden"'." name='codeInscription' value='"
+                            ."<input type='text'".'style="display: none"'." name='codeInscription' value='"
                             .$row["codeInscription"]
                             ."' ><input type='submit' value='supprimer'></form>
                         </td>
