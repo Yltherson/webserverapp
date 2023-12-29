@@ -1,7 +1,7 @@
 <?php
     // require_once 'C:\xampp\htdocs\webserverapp\models\Inscription.php';
 
-    if ($_SERVER['METHOD']) {
+    if ($_POST['submit']) {
 
         $servername = "localhost";
         $username = "root";
@@ -15,13 +15,11 @@
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             // Préparer la requête SQL et lier les paramètres
-            $stmt = $conn->prepare("INSERT INTO inscription (codeInscription, nom, prenom, sexe, dateNaissance, classe, fraisInscription, dateInscription) VALUES (:codeInscription, :nom, :prenom, :sexe, :dateNaissance, :classe, :fraisInscription, :dateInscription)");
+            $stmt = $conn->prepare("UPDATE  inscription SET  nom=:nom, prenom=:prenom, sexe=:sexe, dateNaissance=:dateNaissance, classe=:classe, fraisInscription=:fraisInscription, dateInscription=:dateInscription where codeInscription=:codeInscription");
 
-            $alea = rand(10, 100000);
-            $code = 'C' . $alea;
 
             // reccuperer la valeur des inputs
-            $codeInscription = $code;
+            $codeInscription = $_POST['code'];
             $nom = $_POST['nom'];
             $prenom = $_POST['prenom'];
             $sexe = $_POST['sexe'];
@@ -49,8 +47,5 @@
         $conn = null;
     } else {
         echo "Formulaire non soumis";
-        header("Location: connexion.php");
-        exit;
     }
-
 ?>
