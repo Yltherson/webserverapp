@@ -15,12 +15,12 @@
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             // Préparer la requête SQL et lier les paramètres
-            $stmt = $conn->prepare("DELETE FROM inscription where codeInscription=:codeInscription");
+            $stmt = $conn->prepare("DELETE FROM paiement where idPaiement=:idPaiement");
 
             // reccuperer la valeur de input
-            $codeInscription = $_POST['codeInscription'];
+            $idPaiement = $_POST['idPaiement'];
 
-            $stmt->bindParam(':codeInscription', $codeInscription);
+            $stmt->bindParam(':idPaiement', $idPaiement);
 
             // executer la requete
             $stmt->execute();

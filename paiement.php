@@ -71,13 +71,7 @@
                 if ($result->num_rows > 0) {
                 echo "<table>
                 <tr>
-                    <th>ID PAIEMENT</th><th>CODE INSCRIPTION</th><th>MONTANT</th><th>DATE PAIEMENT</th>
-                    <th>
-                        <from method='post' action='#'>
-                            <input type ='text' name='search' placeholder='id paim...'>
-                            <input type='submit' name='btnSearch' value='search'>
-                        </form>
-                    </th>
+                    <th>ID PAIEMENT</th><th>CODE INSCRIPTION</th><th>MONTANT</th><th>DATE PAIEMENT</th><th></th>
                 </tr>";
                 // output data of each row
                 while($row = $result->fetch_assoc()) {
