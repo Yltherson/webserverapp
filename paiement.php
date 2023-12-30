@@ -95,11 +95,11 @@
                 $conn->close();
             ?>
         </div>
-    </section>
+    </section><br>
 
     <!-- block paiement -->
-    <section class="paiement inactive">
-        
+    <section class="recherchePaiement inactive">
+        <?php include "controllers\\recherchePaiement.php" ?>
     </section>
 
 </body>
