@@ -179,7 +179,7 @@
                         </div>
                         <div class="col-lign">
                             <label for="code">Code</label><br/>
-                            <input  style="width:100%; height:25px" name="code" value="" id="codeUp" required/>
+                            <input  style="width:100%; height:25px" name="code" id="codeUp" required/>
                         
                         </div>
                     </div>

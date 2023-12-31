@@ -40,7 +40,7 @@
                 <label for="mnt">montant</label>
                 <input type="text" id="mnt" name="montant" placeholder="montant.." required>
 
-                <label for="dP">Date de naissance</label>
+                <label for="dP">Date de paiement</label>
                 <input type="date" id="dP" name="dateP" placeholder="date paiement.." required><br>
             
                 <input type="submit" name="submit" value="Ajouter">
@@ -67,11 +67,12 @@
 
                 $sql = "SELECT * FROM paiement";
                 $result = $conn->query($sql);
+                $data;
 
                 if ($result->num_rows > 0) {
                 echo "<table>
                 <tr>
-                    <th>ID PAIEMENT</th><th>CODE INSCRIPTION</th><th>MONTANT</th><th>DATE PAIEMENT</th><th></th>
+                    <th>ID PAIEMENT</th><th>CODE INSCRIPTION</th><th>MONTANT</th><th>DATE PAIEMENT</th><th></th><th></th>
                 </tr>";
                 // output data of each row
                 while($row = $result->fetch_assoc()) {
@@ -80,6 +81,7 @@
                         <td>".$row["codeInscription"]."</td>
                         <td>".$row["montant"]."</td>
                         <td>".$row["dateP"]."</td>
+                        <td><button type='button' onclick='updatePaiement(" . json_encode($row) . ")'>Update</button></td>
                         <td>"
                             ."<form method='POST' action='controllers\supprimerPaiement.php'>"
                             ."<input type='text'".'style="display: none"'." name='idPaiement' value='"
@@ -87,6 +89,7 @@
                             ."' ><input type='submit' value='supprimer'></form>
                         </td>
                     </tr>";
+                    $data = $row;
                 }
                 echo "</table>";
                 } else {
@@ -97,10 +100,33 @@
         </div>
     </section><br>
 
-    <!-- block paiement -->
+    <!-- block recherche paiement -->
     <section class="recherchePaiement inactive">
         <?php include "controllers\\recherchePaiement.php" ?>
     </section>
 
+    <!-- block modifier paiement -->
+    <section class="ajoutP active">
+        <!-- ajouter -->
+        <div class="block">
+            <h3>Modifier paiement</h3>
+            <form action="controllers\updatePaiement.php" method='POST'>
+                <label for="cinsc">id paiement</label>
+                <input type="text" id="idP" name="idPaiment" placeholder="Id paiemment.." readonly>
+
+                <label for="cinsc">Code inscription</label>
+                <input type="text" id="codeI" name="codeInscription" placeholder="code inscription.." required>
+
+                <label for="mnt">montant</label>
+                <input type="text" id="mont" name="montant" placeholder="montant.." required>
+
+                <label for="dP">Date paiement</label>
+                <input type="date" id="dateP" name="dateP" placeholder="date paiement.." required><br>
+            
+                <input type="submit" name="submit" value="Modifier"><input type="reset" value="reset">
+            </form>
+        </div>
+    </section><br>
+    <script src="JavaScripts\padmin.js"></script>
 </body>
 </html>

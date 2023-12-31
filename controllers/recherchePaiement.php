@@ -28,7 +28,7 @@
         if ($result->num_rows > 0) {
         echo "<table>
         <tr>
-            <th>ID PAIEMENT</th><th>CODE INSCRIPTION</th><th>MONTANT</th><th>DATE PAIEMENT</th><th></th>
+            <th>ID PAIEMENT</th><th>CODE INSCRIPTION</th><th>MONTANT</th><th>DATE PAIEMENT</th><th></th><th></th>
         </tr>";
         // output data of each row
         while($row = $result->fetch_assoc()) {
@@ -37,6 +37,7 @@
                 <td>".$row["codeInscription"]."</td>
                 <td>".$row["montant"]."</td>
                 <td>".$row["dateP"]."</td>
+                <td><button type='button' onclick='updatePaiement(" . json_encode($row) . ")'>Update</button></td>
                 <td>"
                     ."<form method='POST' action='controllers\supprimerPaiement.php'>"
                     ."<input type='text'".'style="display: none"'." name='idPaiement' value='"
