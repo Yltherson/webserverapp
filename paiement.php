@@ -106,13 +106,13 @@
     </section>
 
     <!-- block modifier paiement -->
-    <section class="ajoutP active">
+    <section class="modifierPaiement active">
         <!-- ajouter -->
         <div class="block">
             <h3>Modifier paiement</h3>
             <form action="controllers\updatePaiement.php" method='POST'>
                 <label for="cinsc">id paiement</label>
-                <input type="text" id="idP" name="idPaiment" placeholder="Id paiemment.." readonly>
+                <input type="text" id="idP" name="idPaiement" placeholder="Id paiemment.." readonly>
 
                 <label for="cinsc">Code inscription</label>
                 <input type="text" id="codeI" name="codeInscription" placeholder="code inscription.." required>

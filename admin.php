@@ -122,74 +122,49 @@
                 $conn->close();
             ?>
         </div>
-    </section>
+    </section><br>
 
     <section class="updateIns">
-    <form action="controllers\modifierInscription.php" method='POST'>
-            <div class="form">
-                <div class="img">
-                </div>
+<!-- ------------------------------------------------------------------------------------------------------------------------- -->
+        <div class="block">
+            <h3>Modifier Inscription</h3>
+            <form action="controllers\modifierInscription.php" method='POST'>
+                <label for="nom">Prenom</label><br/>
+                <input name="prenom" id="prenomUp" required/><br>
+                
+                <label for="nom">Nom</label><br/>
+                <input name="nom"  id="nomUp" required/><br>
 
-                <div class="info"> 
-                    <div class="lign">
-                        <div class="col-lign">
-                            <label for="nom">Nom</label><br/>
-                            <input  style="width:100%; height:25px" name="nom"  id="nomUp" required/>
-                        </div>
-                        <div class="col-lign">
-                            <label for="nom">Prenom</label><br/>
-                            <input  style="width:100%; height:25px" name="prenom" id="prenomUp" required/>
-                        </div>
-                    </div>
-                    
-                    <div class="lign">
-                        <div class="col-lign">
-                            <label for="birth">Date de naissance</label><br/>
-                            <input style="width:100%; height:25px"  id="dateNaissanceUp" name="dateNaissance" placeholder="Your birthday.." required><br>
-                        </div>
-                        <div class="col-lign">
-                            <label for="birth">Date d'inscription</label><br/>
-                            <input style="width:100%; height:25px" type="date" id="dateInscriptionUp" name="dateInscription" placeholder="signup date.." required><br>
-                        </div>
-                    </div>
+                <label for="birth">Date de naissance</label><br/>
+                <input type="date" id="dateNaissanceUp" name="dateNaissance" placeholder="Your birthday.." required><br>
 
-                    <div class="lign">
-                        <div class="col-lign">
-                            <label for="sub">Frais inscription</label><br/>
-                            <input style="width:100%; height:25px" type="number" id="fraisInscriptionUp" name="fraisInscription" placeholder="Your fee.." required><br>
-                        </div>
-                        <div class="col-lign">
-                            <label for="class">Classe </label><br>
-                            <select name="classe" id="classUp" style="width:100%; height:25px">
-                                <option value="L1">L1</option>
-                                <option value="L2">L2</option>
-                                <option value="L3">L3</option>
-                                <option value="L4">L4</option>
-                            </select><br>
-                        </div>
-                    </div>
+                <label for="birth">Date d'inscription</label><br/>
+                <input type="date" id="dateInscriptionUp" name="dateInscription" placeholder="signup date.." required><br>
 
-                    <div class="lign">
-                        <div class="col-lign">
-                        <label for="sex">Sexe</label><br>
-                            <select name="sexe" id="sexeUp" style="width:100%; height:25px">
-                                <option value="masculin">Masculin</option>
-                                <option value="feminin">Feminin</option>
-                            </select><br>
-                        </div>
-                        <div class="col-lign">
-                            <label for="code">Code</label><br/>
-                            <input  style="width:100%; height:25px" name="code" id="codeUp" required/>
-                        
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div style="text-align:right; padding:25px;">
-                <input type="submit" name="submit" value="Update" style="font-size:20px; padding:7px; background-color:blue; border:none; color:white;">
-                <button type="submit" name="submit" style="font-size:20px; padding:7px; background-color:red; border:none; color:white;">Cancel</button>
-            </div>
-        </form>
+                <label for="sub">Frais inscription</label><br/>
+                <input type="number" id="fraisInscriptionUp" name="fraisInscription" placeholder="Your fee.." required><br>
+
+                <label for="class">Classe </label><br>
+                <select name="classe" id="classUp">
+                    <option value="L1">L1</option>
+                    <option value="L2">L2</option>
+                    <option value="L3">L3</option>
+                    <option value="L4">L4</option>
+                </select><br>
+                
+                <label for="sex">Sexe</label><br>
+                <select name="sexe" id="sexeUp">
+                    <option value="masculin">Masculin</option>
+                    <option value="feminin">Feminin</option>
+                </select><br>
+
+                <label for="code">Code</label><br/>
+                <input name="code" id="codeUp" required/>
+
+                <input type="submit" name="submit" value="Update">
+                <button type="reset" name="submit">Cancel</button>
+            </form>
+        </div>
     </section><br>
 
     <!-- rechercher inscription -->
