@@ -1,4 +1,4 @@
-function updatePaiement(data) {
+function update(data) {
     // console.log(mac.dateNaissance)
     // Pase done yo nan fòm la
     document.getElementById("idP").value = data.idPaiement;

@@ -1,5 +1,6 @@
+<?php include "../index.php" ?>
+<?php include "pages/navbar.php" ?>
 <?php
-    // require_once 'C:\xampp\htdocs\webserverapp\models\Inscription.php';
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -41,7 +42,7 @@
 
             // executer la requete
             $stmt->execute();
-            header("Location: ../admin.php");
+            header("Location: ../index.php");
             exit();
         } catch (PDOException $e) {
             echo "Erreur : " . $e->getMessage();

@@ -4,6 +4,7 @@
         <input type="text" id="ch" name="cr" placeholder="Your first name.." required>
         <input type="submit" name="submit" value="rechercher">
     </form>
+
     <?php
     $servername = "localhost";
     $username = "root";
@@ -12,6 +13,7 @@
 
     $valR = "";
     if($_SERVER["REQUEST_METHOD"] == "POST"){
+        print_r($_POST);
         $valR = $_POST["cr"];
     }
 

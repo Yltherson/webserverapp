@@ -8,7 +8,7 @@ input[type=text], input[type=password], input[type=date] {
     box-sizing: border-box;
 }
   
-input[type=submit] {
+input[type=submit], button[type=button] {
   width: 100%;
   background-color: #040614;
   color: white;
@@ -26,7 +26,7 @@ input[type=submit] {
 div {
   border-radius: 5px;
   /* background-color: #f2f2f2; */
-  background-color: #090c29cb;
+  background-color: #092925cb;
   padding: 20px;
 }
 
@@ -34,3 +34,28 @@ div {
     max-width: 600px;
     margin: auto;
   }
+
+.link-nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.li-nav{
+  list-style-type: none;
+  margin: 7px;
+}
+
+.a-nav{
+  text-decoration: none;
+  color: white;
+  font-size: 1.2em;
+
+}
+
+a.a-nav:hover{
+  border-bottom: #040614 4px solid;
+  color:black
+}
