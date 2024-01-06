@@ -22,7 +22,7 @@
                 // Rekipere URL
                 $url = $_SERVER['REQUEST_URI'];
                 
-                if($url ==="/webserverapp/index.php?page=search-inscription"){
+                if($url ==="/webserverapp/?page=search-inscription"){
 
                     $servername = "localhost";
                     $username = "root";
@@ -90,7 +90,7 @@
         <div class="tableI">
             <?php
                 $url = $_SERVER['REQUEST_URI'];
-                if($url ==="/webserverapp/index.php?page=search-paiment"){
+                if($url ==="/webserverapp/?page=search-paiment"){
                     $servername = "localhost";
                     $username = "root";
                     $password = "";
