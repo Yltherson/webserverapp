@@ -39,7 +39,7 @@
 
             // executer la requete
             $stmt->execute();
-            header("Location: ../admin.php");
+            header("Location: ../index.php");
             exit();
         } catch (PDOException $e) {
             echo "Erreur : " . $e->getMessage();
