@@ -105,7 +105,7 @@ ALTER TABLE `administrator`
 -- Contraintes pour la table `paiement`
 --
 ALTER TABLE `paiement`
-  ADD CONSTRAINT `fk_codeIns` FOREIGN KEY (`codeInscription`) REFERENCES `inscription` (`codeInscription`);
+  ADD CONSTRAINT `fk_codeIns` FOREIGN KEY (`codeInscription`) REFERENCES `inscription` (`codeInscription`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
